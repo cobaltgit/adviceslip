@@ -41,22 +41,22 @@ $ pip install adviceslip[cli]
 ```
 
 ```bash
-$ adviceslip --id 12 # Get a slip from a specific ID
+$ adviceslip id 12 # Get a slip from a specific ID
 Always block trolls.
 
-$ adviceslip --random # Get a random slip
+$ adviceslip random # Get a random slip
 Eliminate the unnecessary.
 
-$ adviceslip --search good # Search for slips using a given query
-#92: You can have too much of a good thing. - 2016-08-09
-#95: Good advice is something a man gives when he is too old to set a bad example. - 2016-09-15
-#120: A nod is as good as a wink to a blind horse. - 2016-12-11
-#122: You spend half your life asleep or in bed. It's worth spending money on a good mattress, decent pillows and a comfy duvet. - 2016-05-25
-#174: Be a good lover. - 2014-06-03
-#176: Good things come to those who wait. - 2017-02-04
-#179: Never regret. If it's good, it's wonderful. If it's bad, it's experience. - 2016-12-03
-#180: Never regret. If it's good, it's wonderful. If it's bad, it's experience. - 2015-06-24
-#215: Once you find a really good friend don't do anything that could mess up your friendship. - 2016-03-01
+$ adviceslip search good # Search for slips using a given query
+You can have too much of a good thing.
+Good advice is something a man gives when he is too old to set a bad example.
+A nod is as good as a wink to a blind horse.
+You spend half your life asleep or in bed. It's worth spending money on a good mattress, decent pillows and a comfy duvet.
+Be a good lover.
+Good things come to those who wait.
+Never regret. If it's good, it's wonderful. If it's bad, it's experience.
+Never regret. If it's good, it's wonderful. If it's bad, it's experience.
+Once you find a really good friend don't do anything that could mess up your friendship.
 ```
 
 ## Development
