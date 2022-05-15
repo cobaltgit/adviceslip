@@ -191,26 +191,32 @@
           <h1>Source code for adviceslip.cli</h1><div class="highlight"><pre>
 <span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">typer</span>
-<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"The command-line application requires typer to be installed. Install adviceslip[cli] with pip or conda."</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+        <span class="s2">"The command-line application requires typer to be installed. Install adviceslip[cli] with pip or conda."</span>
+    <span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
 
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+
 <span class="kn">from</span> <span class="nn">.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Typer</span><span class="p">()</span>
+
 
 <div class="viewcode-block" id="random"><a class="viewcode-back" href="../../adviceslip.html#adviceslip.cli.random">[docs]</a><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">random</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">with</span> <span class="n">Client</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
         <span class="n">slip</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
     <span class="n">typer</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">slip</span><span class="p">)</span></div>
-    
+
+
 <div class="viewcode-block" id="id"><a class="viewcode-back" href="../../adviceslip.html#adviceslip.cli.id">[docs]</a><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">with</span> <span class="n">Client</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
         <span class="n">slip</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">slip_from_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
     <span class="n">typer</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">slip</span><span class="p">)</span></div>
-    
+
+
 <div class="viewcode-block" id="search"><a class="viewcode-back" href="../../adviceslip.html#adviceslip.cli.search">[docs]</a><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">with</span> <span class="n">Client</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>

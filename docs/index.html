@@ -243,22 +243,26 @@ $ python3.8 -m pip install git+https://github.com/cobaltgit/adviceslip
 </section>
 <section id="command-line">
 <h3>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ adviceslip --id <span class="m">12</span> <span class="c1"># Get a slip from a specific ID</span>
+<p>To utilise the command line application, you’ll need to install the cli extra</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install adviceslip<span class="o">[</span>cli<span class="o">]</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ adviceslip id <span class="m">12</span> <span class="c1"># Get a slip from a specific ID</span>
 Always block trolls.
 
-$ adviceslip --random <span class="c1"># Get a random slip</span>
+$ adviceslip random <span class="c1"># Get a random slip</span>
 Eliminate the unnecessary.
 
-$ adviceslip --search good <span class="c1"># Search for slips using a given query</span>
-<span class="c1">#92: You can have too much of a good thing. - 2016-08-09</span>
-<span class="c1">#95: Good advice is something a man gives when he is too old to set a bad example. - 2016-09-15</span>
-<span class="c1">#120: A nod is as good as a wink to a blind horse. - 2016-12-11</span>
-<span class="c1">#122: You spend half your life asleep or in bed. It's worth spending money on a good mattress, decent pillows and a comfy duvet. - 2016-05-25</span>
-<span class="c1">#174: Be a good lover. - 2014-06-03</span>
-<span class="c1">#176: Good things come to those who wait. - 2017-02-04</span>
-<span class="c1">#179: Never regret. If it's good, it's wonderful. If it's bad, it's experience. - 2016-12-03</span>
-<span class="c1">#180: Never regret. If it's good, it's wonderful. If it's bad, it's experience. - 2015-06-24</span>
-<span class="c1">#215: Once you find a really good friend don't do anything that could mess up your friendship. - 2016-03-01</span>
+$ adviceslip search good <span class="c1"># Search for slips using a given query</span>
+You can have too much of a good thing.
+Good advice is something a man gives when he is too old to <span class="nb">set</span> a bad example.
+A nod is as good as a wink to a blind horse.
+You spend half your life asleep or <span class="k">in</span> bed. It<span class="s1">'s worth spending money on a good mattress, decent pillows and a comfy duvet.</span>
+<span class="s1">Be a good lover.</span>
+<span class="s1">Good things come to those who wait.</span>
+<span class="s1">Never regret. If it'</span>s good, it<span class="s1">'s wonderful. If it'</span>s bad, it<span class="s1">'s experience.</span>
+<span class="s1">Never regret. If it'</span>s good, it<span class="s1">'s wonderful. If it'</span>s bad, it<span class="s1">'s experience.</span>
+<span class="s1">Once you find a really good friend don'</span>t <span class="k">do</span> anything that could mess up your friendship.
 </pre></div>
 </div>
 </section>
@@ -266,11 +270,15 @@ $ adviceslip --search good <span class="c1"># Search for slips using a given que
 <section id="development">
 <h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">#</a></h2>
 <p>Feel free to contribute to the library! Here’s some simple instructions to get you set up and ready!</p>
-<p>First, you’ll need to fork the repository and clone it to a directory on your computer with Git.</p>
+<ul class="simple">
+<li><p>First, you’ll need to fork the repository and clone it to a directory on your computer with Git.</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/username/adviceslip.git <span class="c1"># replace username with your GitHub username</span>
 </pre></div>
 </div>
-<p>Next, install the development dependencies for testing and development purposes. Use the following commands</p>
+<ul class="simple">
+<li><p>Next, install the development dependencies for testing and development purposes. Use the following commands</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ poetry install
 $ poetry run pre-commit install <span class="c1"># installs the pre-commit hook for code formatting and linting</span>
 </pre></div>
