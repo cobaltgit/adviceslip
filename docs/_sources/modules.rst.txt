@@ -1,7 +1,0 @@
-adviceslip
-==========
-
-.. toctree::
-   :maxdepth: 4
-
-   adviceslip
