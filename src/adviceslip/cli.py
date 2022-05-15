@@ -1,9 +1,9 @@
 try:
     import typer
-except ImportError:
+except ImportError as e:
     raise RuntimeError(
         "The command-line application requires typer to be installed. Install adviceslip[cli] with pip or conda."
-    )
+    ) from e
 
 from typing import Optional
 

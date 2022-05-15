@@ -26,6 +26,6 @@ class VersionInfo(NamedTuple):
     micro: int
 
 
-__version__ = VersionInfo(major=1, minor=0, micro=0)
+__version__ = VersionInfo(major=1, minor=0, micro=1)
 
 del VersionInfo, NamedTuple

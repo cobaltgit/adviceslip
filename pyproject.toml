@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "adviceslip"
-version = "1.0.0"
+version = "1.0.1"
 description = "Client for the Advice Slip API"
 authors = ["cobaltgit <criterion@chitco.co.uk>"]
 license = "MPL-2.0"
@@ -24,6 +24,9 @@ m2r2 = "^0.3.2"
 
 [tool.poetry.extras]
 cli = ["typer"]
+
+[tool.poetry.scripts]
+adviceslip = "adviceslip.cli:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
