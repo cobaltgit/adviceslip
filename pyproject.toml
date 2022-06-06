@@ -19,7 +19,6 @@ tox = "^3.25.0"
 pytest = "^7.1.2"
 tox-pyenv-install = {git = "https://github.com/pojx/tox-pyenv-install.git"} # allow tox to detect interpreters installed via pyenv
 pre-commit = "^2.19.0"
-pytest-asyncio = "^0.18.3"
 
 [tool.poetry.extras]
 cli = ["typer"]
