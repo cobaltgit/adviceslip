@@ -1,6 +1,3 @@
-from tkinter import W
-
-import pytest
 from typer.testing import CliRunner
 
 from adviceslip.cli import app
