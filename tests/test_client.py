@@ -1,5 +1,4 @@
 from random import randint
-from re import A
 
 import pytest
 
@@ -25,6 +24,7 @@ def test_closed_session() -> None:
         pass
     with pytest.raises(adviceslip.SessionClosed):
         temp_client.slip_from_id(1)
+
 
 def test_api_error() -> None:
     out_of_bounds_id = randint(32768, 65536)
