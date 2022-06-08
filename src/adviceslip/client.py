@@ -8,7 +8,8 @@ from .exceptions import APIError, HTTPException, MessageType, SessionClosed
 from .objects import Search, Slip
 
 
-class ClientBase:
+class Client:
+    """Client class for interacting with the Advice Slip API"""
 
     URL: ClassVar[str] = "https://api.adviceslip.com"
 
@@ -18,11 +19,11 @@ class ClientBase:
             self.session: requests.Session = requests.Session()
             self._closed: bool = False
 
-    def __enter__(self) -> "ClientBase":
+    def __enter__(self) -> "Client":
         """Context manager entrypoint
 
         Returns:
-            ClientBase: The client instance
+            Client: The client instance
         """
         return self
 
@@ -75,8 +76,6 @@ class ClientBase:
             self.session.close()
             self._closed = True
 
-
-class Client(ClientBase):
     def random(self) -> Slip:
         """Get a random slip
 
