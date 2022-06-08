@@ -7,7 +7,7 @@ build:
 	poetry build
 
 release: test build
-	poetry publish --builds=sdist,wheel
+	poetry publish
 
 clean:
 	find -L . -type d -name "__pycache__" -print0 | xargs -0 rm -rf
