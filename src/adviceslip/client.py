@@ -1,6 +1,6 @@
 from datetime import date
 from types import TracebackType
-from typing import Any, ClassVar, Dict, Optional, Type
+from typing import Any, ClassVar, Dict, Optional, Tuple, Type
 
 import requests
 
@@ -12,6 +12,7 @@ class Client:
     """Client class for interacting with the Advice Slip API"""
 
     URL: ClassVar[str] = "https://api.adviceslip.com"
+    __slots__: Tuple[str] = ("session", "_SESSION_OWNED_BY_CLIENT", "_closed")
 
     def __init__(self, *, session: Optional[requests.Session] = None) -> None:
         self._SESSION_OWNED_BY_CLIENT: bool = session is None
