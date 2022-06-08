@@ -1,40 +1,40 @@
-from dataclasses import dataclass
-from datetime import date
-from typing import Iterator, Optional
+import datetime
+from typing import Iterable, Iterator, Optional, Tuple
 
 
-@dataclass
 class Slip:
-    """Dataclass containing slip data (ID, advice, optional date)"""
+    """Slip object returned by the API. Contains the slip ID, advice and an optional date attribute"""
 
-    id: int
-    advice: str
-    date: Optional[date] = None
+    __slots__: Tuple[str] = ("id", "advice", "date")
+
+    def __init__(self, *, id: int, advice: str, date: Optional[datetime.date] = None) -> None:
+        self.id: int = id
+        self.advice: str = advice
+        self.date: Optional[datetime.date] = date
 
     def __str__(self) -> str:
-        """Return the slip as a string
-
-        Returns:
-            str: The advice from the slip
-        """
+        """Returns the advice in the slip"""
         return self.advice
 
+    def __repr__(self) -> str:
+        """Returns a clean representation of the slip object"""
+        return f"<Search id={self.id} advice={self.advice!r}>"
 
-@dataclass
+
 class Search:
-    """Dataclass containing search results (amount, search query, iterator of slip objects)"""
+    """Search object returned by the API. Contains the amount of results, the query itself and an iterable of slip objects"""
 
-    total_results: int
-    query: str
-    slips: Iterator[Slip]
+    __slots__: Tuple[str] = ("total_results", "query", "slips")
+
+    def __init__(self, *, total_results: int, query: str, slips: Iterable[Slip]) -> None:
+        self.total_results: int = total_results
+        self.query: str = query
+        self.slips: Iterable[Slip] = slips
+
+    def __repr__(self) -> str:
+        """Returns a clean representation of the search object"""
+        return f"<Search total_results={self.total_results} query={self.query!r}>"
 
     def __iter__(self) -> Iterator[Slip]:
-        """Iterate over the slips from the search object
-
-        Returns:
-            Slip: The slip object containing advice, ID and optional date
-
-        Yields:
-            Iterator[Slip]: The iterator containing the slip objects
-        """
-        return self.slips
+        """Returns an iterator over the search results"""
+        return iter(self.slips)
