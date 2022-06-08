@@ -6,7 +6,7 @@ authors = ["cobaltgit <criterion@chitco.co.uk>"]
 license = "MPL-2.0"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 requests = "^2.27.1"
 typer = {version = "^0.4.1", optional = true}
 aiohttp = "^3.8.1"
